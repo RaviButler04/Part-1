@@ -6,8 +6,8 @@ public class CannonSlide : MonoBehaviour
 {
     float speed = 5f;
 
-    //public GameObject missilePrefab;
-    //public Transform spawn;
+    public GameObject cannonBall;
+    public Transform spawn;
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +22,10 @@ public class CannonSlide : MonoBehaviour
 
         transform.Translate(direction * speed * Time.deltaTime, 0, 0);
 
-       /*f (Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(missilePrefab, spawn.position, spawn.rotation);
+            Instantiate(cannonBall, spawn.position, spawn.rotation);
         }
-       */
+       
     }
 }
