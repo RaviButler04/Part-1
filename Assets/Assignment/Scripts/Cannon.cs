@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
+    //float to hold rotation speed
     public float speed = 50f;
     public GameObject gameObject;
 
@@ -16,6 +17,7 @@ public class Cannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //rotate cannon around platform origin
         float cannonMove = Input.GetAxis("Vertical");
         transform.RotateAround(gameObject.transform.position, Vector3.forward, -speed * Time.deltaTime * -cannonMove);
     }

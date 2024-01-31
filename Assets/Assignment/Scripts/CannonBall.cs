@@ -16,8 +16,8 @@ public class CannonBall : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
 
         //gives it force as soon as it is created
-        Vector2 force = -transform.up * 100000 * Time.deltaTime;
-        rigidbody.AddForce(force);
+        Vector2 initialForce = -transform.up * 100000 * Time.deltaTime;
+        rigidbody.AddForce(initialForce);
     }
 
     // Update is called once per frame
@@ -28,8 +28,8 @@ public class CannonBall : MonoBehaviour
 
         if (transform.position.y <= -5)
         {
-            //make an x and then destroy self
-            Instantiate(failure, spawner, Quaternion.AngleAxis(45, Vector3.fwd));
+            //make an 'x' and then destroy self - if ball is lower than -5
+            Instantiate(failure, spawner, Quaternion.AngleAxis(45, Vector3.forward));
             Destroy(gameObject);
         }
     }

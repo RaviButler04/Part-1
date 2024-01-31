@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class BackgroundChanger : MonoBehaviour
 {
+    //float to hold counter
     float counter = 1f;
     public SpriteRenderer spriteRenderer;
 
+    //three custom colours
     public Color myColor1;
     public Color myColor2;
     public Color myColor3;
@@ -20,6 +22,7 @@ public class BackgroundChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //check counter number and change coloour depending
         if(counter == 1)
         {
             spriteRenderer.color = myColor1;
@@ -36,6 +39,7 @@ public class BackgroundChanger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //increment counter, reset if at 3
         if(counter < 3)
         {
             counter++;

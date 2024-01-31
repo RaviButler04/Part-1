@@ -5,6 +5,8 @@ using UnityEngine;
 public class Barrier : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
+
+    //float to count number of times collided with
     float breakCounter = 0f;
 
     // Start is called before the first frame update
@@ -16,6 +18,7 @@ public class Barrier : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //change colour of barrier depening on counter
         if (breakCounter == 0)
         {
             spriteRenderer.color = Color.green;
@@ -28,6 +31,7 @@ public class Barrier : MonoBehaviour
         {
             spriteRenderer.color = Color.red;
         }
+        //destroy self if counter is 3
         else if (breakCounter == 3)
         {
             Destroy(gameObject);
@@ -36,6 +40,7 @@ public class Barrier : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //increment counter
         breakCounter += 1;
     }
 }
